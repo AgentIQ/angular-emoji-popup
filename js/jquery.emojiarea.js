@@ -339,7 +339,8 @@
 		this.$editor.attr({
 			contenteditable : 'true',
 			id : 'messageDiv',
-			'ng-model': 'emojiMessage.rawhtml'
+			'ng-model': 'emojiMessage.rawhtml',
+			'meditor': 'meditor'
 		});
 		// this.$editor.attr({'ng-enter': 'replyToUser()'});
 

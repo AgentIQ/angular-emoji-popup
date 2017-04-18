@@ -1,6 +1,6 @@
 'use strict';
 
-var emojiApp = angular.module("emojiApp", ['ngSanitize']);
+var emojiApp = angular.module("emojiApp", ['ngSanitize', 'angular-meditor']);
 
 emojiApp.config(['$sceProvider', function($sceProvider)
 {

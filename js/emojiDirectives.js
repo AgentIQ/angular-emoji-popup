@@ -6,7 +6,8 @@ emojiApp.directive('emojiForm', ['$timeout', '$http', '$interpolate','$compile',
     return {
         scope:
         {
-            emojiMessage: '='
+            emojiMessage: '=',
+            emojiWysiwig: '='
         },
         link: link
     };
@@ -22,10 +23,12 @@ emojiApp.directive('emojiForm', ['$timeout', '$http', '$interpolate','$compile',
                 button: emojiButton,
                 norealTime: true
             }),
-            emojiMenu = $('.emoji-menu', element)[0],
-            richTextarea = $(
+            emojiMenu = $('.emoji-menu', element)[0];
+            if(!$scope.emojiWysiwig)
+                $('.emoji-wysiwyg-editor', element).removeAttr('meditor');
+            var richTextarea = $(
                 '.emoji-wysiwyg-editor', element)[0];
-
+            
             var s = $compile($("#messageDiv"));
             $("#messageDiv").replaceWith(s($scope));
 
